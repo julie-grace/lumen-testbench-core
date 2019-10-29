@@ -30,6 +30,7 @@
         "fzaninotto/faker": "^1.4"
     },
     "require-dev": {
+        "albertcht/lumen-testing": "dev-master",
         "laravel/lumen": "dev-master",
         "laravel/lumen-framework": "^6.4",
         "mockery/mockery": "^1.2.3",
