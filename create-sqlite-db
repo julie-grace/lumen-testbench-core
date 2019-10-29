@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-$directory = realpath(__DIR__.'/laravel/database');
+$directory = realpath(__DIR__.'/lumen/database');
 
 if (! file_exists("{$directory}/database.sqlite")) {
     copy("{$directory}/database.sqlite.example", "{$directory}/database.sqlite");
