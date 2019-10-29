@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Bootstrap;
+namespace Lumen\Testbench\Bootstrap;
 
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Config\Repository as RepositoryContract;
@@ -53,7 +53,7 @@ class LoadConfiguration
     {
         $files = [];
 
-        $path = \realpath(__DIR__.'/../../laravel/config');
+        $path = \realpath(__DIR__.'/../../lumen/config');
 
         foreach (Finder::create()->files()->name('*.php')->in($path) as $file) {
             $files[\basename($file->getRealPath(), '.php')] = $file->getRealPath();

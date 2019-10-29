@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Http\Middleware;
+namespace Lumen\Testbench\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

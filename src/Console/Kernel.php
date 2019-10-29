@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Console;
+namespace Lumen\Testbench\Console;
 
 use Exception;
 

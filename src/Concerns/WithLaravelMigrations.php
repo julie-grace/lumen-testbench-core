@@ -1,8 +1,8 @@
 <?php
 
-namespace Orchestra\Testbench\Concerns;
+namespace Lumen\Testbench\Concerns;
 
-use Orchestra\Testbench\Database\MigrateProcessor;
+use Lumen\Testbench\Database\MigrateProcessor;
 
 trait WithLaravelMigrations
 {

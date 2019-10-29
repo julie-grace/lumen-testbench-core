@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Concerns;
+namespace Lumen\Testbench\Concerns;
 
 use Carbon\Carbon;
 use Carbon\CarbonImmutable;

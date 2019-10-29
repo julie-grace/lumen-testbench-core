@@ -1,9 +1,9 @@
 <?php
 
-namespace Orchestra\Testbench\Concerns;
+namespace Lumen\Testbench\Concerns;
 
 use InvalidArgumentException;
-use Orchestra\Testbench\Database\MigrateProcessor;
+use Lumen\Testbench\Database\MigrateProcessor;
 
 trait WithLoadMigrationsFrom
 {

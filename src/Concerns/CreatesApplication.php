@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Concerns;
+namespace Lumen\Testbench\Concerns;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Collection;
@@ -214,7 +214,7 @@ trait CreatesApplication
         return \tap(new Application($this->getBasePath()), static function ($app) {
             $app->bind(
                 'Illuminate\Foundation\Bootstrap\LoadConfiguration',
-                'Orchestra\Testbench\Bootstrap\LoadConfiguration'
+                'Lumen\Testbench\Bootstrap\LoadConfiguration'
             );
         });
     }
@@ -264,7 +264,7 @@ trait CreatesApplication
      */
     protected function resolveApplicationConsoleKernel($app)
     {
-        $app->singleton('Illuminate\Contracts\Console\Kernel', 'Orchestra\Testbench\Console\Kernel');
+        $app->singleton('Illuminate\Contracts\Console\Kernel', 'Lumen\Testbench\Console\Kernel');
     }
 
     /**
@@ -276,7 +276,7 @@ trait CreatesApplication
      */
     protected function resolveApplicationHttpKernel($app)
     {
-        $app->singleton('Illuminate\Contracts\Http\Kernel', 'Orchestra\Testbench\Http\Kernel');
+        $app->singleton('Illuminate\Contracts\Http\Kernel', 'Lumen\Testbench\Http\Kernel');
     }
 
     /**
@@ -288,7 +288,7 @@ trait CreatesApplication
      */
     protected function resolveApplicationExceptionHandler($app)
     {
-        $app->singleton('Illuminate\Contracts\Debug\ExceptionHandler', 'Orchestra\Testbench\Exceptions\Handler');
+        $app->singleton('Illuminate\Contracts\Debug\ExceptionHandler', 'Lumen\Testbench\Exceptions\Handler');
     }
 
     /**

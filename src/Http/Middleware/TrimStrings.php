@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Http\Middleware;
+namespace Lumen\Testbench\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\TrimStrings as BaseTrimmer;
 

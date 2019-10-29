@@ -1,17 +1,17 @@
 <?php
 
-namespace Orchestra\Testbench\Database;
+namespace Lumen\Testbench\Database;
 
 use Illuminate\Database\Migrations\Migrator;
 use Illuminate\Foundation\Testing\PendingCommand;
-use Orchestra\Testbench\Contracts\TestCase;
+use Lumen\Testbench\Contracts\TestCase;
 
 class MigrateProcessor
 {
     /**
      * The testbench instance.
      *
-     * @var \Orchestra\Testbench\Contracts\TestCase
+     * @var \Lumen\Testbench\Contracts\TestCase
      */
     protected $testbench;
 
@@ -25,7 +25,7 @@ class MigrateProcessor
     /**
      * Construct a new schema migrator.
      *
-     * @param \Orchestra\Testbench\Contracts\TestCase  $testbench
+     * @param \Lumen\Testbench\Contracts\TestCase  $testbench
      * @param array  $options
      */
     public function __construct(TestCase $testbench, array $options = [])

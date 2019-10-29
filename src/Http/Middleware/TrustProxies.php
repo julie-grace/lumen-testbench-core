@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Http\Middleware;
+namespace Lumen\Testbench\Http\Middleware;
 
 use Fideloper\Proxy\TrustProxies as Middleware;
 use Illuminate\Http\Request;

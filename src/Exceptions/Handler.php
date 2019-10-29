@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Exceptions;
+namespace Lumen\Testbench\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

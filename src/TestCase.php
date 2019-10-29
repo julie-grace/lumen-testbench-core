@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench;
+namespace Lumen\Testbench;
 
 use Illuminate\Foundation\Testing\Concerns\InteractsWithAuthentication;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithConsole;
