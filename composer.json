@@ -42,13 +42,13 @@
     "suggest": {
         "laravel/lumen-framework": "Required for testing (^6.4).",
         "mockery/mockery": "Allow using Mockery for testing (^1.2.3).",
-        "orchestra/testbench-browser-kit": "Allow using legacy Laravel BrowserKit for testing (^4.0).",
-        "orchestra/testbench-dusk": "Allow using Laravel Dusk for testing (^4.0).",
+        "orchestra/testbench-browser-kit": "Allow using legacy Laravel BrowserKit for testing (^5.0).",
+        "orchestra/testbench-dusk": "Allow using Laravel Dusk for testing (^5.0).",
         "phpunit/phpunit": "Allow using PHPUnit for testing (^8.3)."
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0-dev"
+            "dev-master": "5.0-dev"
         }
     },
     "config": {
