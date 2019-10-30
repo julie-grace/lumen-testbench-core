@@ -2,7 +2,7 @@
 
 namespace Lumen\Testbench\Concerns;
 
-use Illuminate\Foundation\Application;
+use Laravel\Lumen\Application;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Facade;
 
@@ -53,7 +53,7 @@ trait CreatesApplication
      *
      * @return array
      */
-    protected function getApplicationAliases($app)
+    protected function getApplicationAliases(Application $app)
     {
         return $app['config']['app.aliases'];
     }
@@ -175,11 +175,13 @@ trait CreatesApplication
     /**
      * Get base path.
      *
+     * This is where the super minimal `lumen` folder in the root is
+     *
      * @return string
      */
     protected function getBasePath()
     {
-        return realpath(__DIR__.'/../../laravel');
+        return realpath(__DIR__.'/../../lumen');
     }
 
     /**
@@ -250,9 +252,7 @@ trait CreatesApplication
         Facade::clearResolvedInstances();
         Facade::setFacadeApplication($app);
 
-        $app->detectEnvironment(static function () {
-            return 'testing';
-        });
+        return $app->environment();
     }
 
     /**
@@ -300,38 +300,17 @@ trait CreatesApplication
      */
     protected function resolveApplicationBootstrappers($app)
     {
-        $app->make('Illuminate\Foundation\Bootstrap\HandleExceptions')->bootstrap($app);
-        $app->make('Illuminate\Foundation\Bootstrap\RegisterFacades')->bootstrap($app);
-        $app->make('Illuminate\Foundation\Bootstrap\SetRequestForConsole')->bootstrap($app);
-        $app->make('Illuminate\Foundation\Bootstrap\RegisterProviders')->bootstrap($app);
-
         $this->getEnvironmentSetUp($app);
 
-        $app->make('Illuminate\Foundation\Bootstrap\BootProviders')->bootstrap($app);
+        foreach ($this->resolveApplicationProviders($app) as $provider) {
+            $app->register($provider);
+        }
 
         foreach ($this->getPackageBootstrappers($app) as $bootstrap) {
             $app->make($bootstrap)->bootstrap($app);
         }
 
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
-
-        $app['router']->getRoutes()->refreshNameLookups();
-
-        $app->resolving('url', static function ($url, $app) {
-            $app['router']->getRoutes()->refreshNameLookups();
-        });
-    }
-
-    /**
-     * Reset artisan commands for the application.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     *
-     * @return void
-     */
-    final protected function resetApplicationArtisanCommands($app)
-    {
-        $app['Illuminate\Contracts\Console\Kernel']->setArtisan(null);
+        $app->make('Laravel\Lumen\Console\Kernel');
     }
 
     /**

@@ -22,8 +22,6 @@ trait WithLumenMigrations
         $migrator = new MigrateProcessor($this, $options);
         $migrator->up();
 
-        // $this->resetApplicationArtisanCommands($this->app);
-
         $this->beforeApplicationDestroyed(static function () use ($migrator) {
             $migrator->rollback();
         });
