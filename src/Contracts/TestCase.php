@@ -2,7 +2,7 @@
 
 namespace Lumen\Testbench\Contracts;
 
-use Illuminate\Contracts\Auth\Authenticatable;
+use AlbertCht\Lumen\Testing\Concerns\Authenticatable;
 
 interface TestCase
 {
