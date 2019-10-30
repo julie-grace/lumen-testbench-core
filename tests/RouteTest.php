@@ -1,9 +1,9 @@
 <?php
 
-namespace Orchestra\Testbench\Tests;
+namespace Lumen\Testbench\Tests;
 
 use Illuminate\Routing\Router;
-use Orchestra\Testbench\TestCase;
+use Lumen\Testbench\TestCase;
 
 class RouteTest extends TestCase
 {
@@ -16,25 +16,23 @@ class RouteTest extends TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['router']->get('hello', ['as' => 'hi', 'uses' => function () {
+        $app->router->get('hello', ['as' => 'hi', function () {
             return 'hello world';
         }]);
 
-        $app['router']->get('goodbye', function () {
+        $app->router->get('goodbye', ['as' => 'bye', function () {
             return 'goodbye world';
-        })->name('bye');
+        }]);
 
-        $app['router']->group(['prefix' => 'boss'], function (Router $router) {
-            $router->get('hello', ['as' => 'boss.hi', 'uses' => function () {
+        $app->router->group(['prefix' => 'boss'], function ($router) {
+            $router->get('hello', ['as' => 'boss.hi', function () {
                 return 'hello boss';
             }]);
 
-            $router->get('goodbye', function () {
+            $router->get('goodbye', ['as' => 'boss.bye', function () {
                 return 'goodbye boss';
-            })->name('boss.bye');
+            }]);
         });
-
-        $app['router']->resource('foo', 'Orchestra\Testbench\Tests\Stubs\Controllers\Controller');
     }
 
     /** @test */
@@ -62,20 +60,11 @@ class RouteTest extends TestCase
     }
 
     /** @test */
-    public function it_can_resolve_resource_controller()
-    {
-        $response = $this->call('GET', 'foo');
-
-        $response->assertStatus(200);
-        $this->assertEquals('Controller@index', $response->getContent());
-    }
-
-    /** @test */
     public function it_can_resolve_name_routes()
     {
-        $this->app['router']->get('byebye', function () {
+        $this->app->router->get('byebye', ['as' => 'bae', function () {
             return route('bye');
-        })->name('bae');
+        }]);
 
         $response = $this->call('GET', route('bae'));
 
