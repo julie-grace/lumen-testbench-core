@@ -1,15 +1,16 @@
 <?php
 
-namespace Orchestra\Testbench\Tests\Databases;
+namespace Lumen\Testbench\Tests\Databases;
 
-use Orchestra\Testbench\TestCase;
+use Illuminate\Support\Facades\Hash;
+use Lumen\Testbench\TestCase;
 
 class MigrateWithRealpathTest extends TestCase
 {
     /**
      * Setup the test environment.
      */
-    protected function setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -72,6 +73,6 @@ class MigrateWithRealpathTest extends TestCase
         $users = \DB::table('testbench_users')->where('id', '=', 1)->first();
 
         $this->assertEquals('hello@orchestraplatform.com', $users->email);
-        $this->assertTrue(\Hash::check('123', $users->password));
+        $this->assertTrue(Hash::check('123', $users->password));
     }
 }
