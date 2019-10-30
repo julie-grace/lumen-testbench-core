@@ -4,7 +4,7 @@ namespace Lumen\Testbench\Console;
 
 use Exception;
 
-class Kernel extends \Illuminate\Foundation\Console\Kernel
+class Kernel extends \Laravel\Lumen\Console\Kernel
 {
     /**
      * The bootstrap classes for the application.
