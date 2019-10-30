@@ -1,8 +1,9 @@
 <?php
 
-namespace Orchestra\Testbench\TestCase;
+namespace Lumen\Testbench\TestCase;
 
-use Orchestra\Testbench\TestCase;
+use Illuminate\Support\Facades\Config;
+use Lumen\Testbench\TestCase;
 
 class ConfigTest extends TestCase
 {
@@ -15,18 +16,18 @@ class ConfigTest extends TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('database.default', 'testing');
+        $app->config['database.default'] = 'testing';
     }
 
     /** @test */
     public function it_loads_config_facade()
     {
-        $this->assertEquals('testing', \Config::get('database.default'));
+        $this->assertEquals('testing', Config::get('database.default'));
     }
 
     /** @test */
     public function it_loads_config_helper()
     {
-        $this->assertEquals('testing', config('database.default'));
+        $this->assertEquals('testing', $this->app->config->get('database.default'));
     }
 }
