@@ -1,8 +1,8 @@
 <?php
 
-namespace Orchestra\Testbench\Tests\Integrations;
+namespace Lumen\Testbench\Tests\Integrations;
 
-use Orchestra\Testbench\TestCase;
+use Lumen\Testbench\TestCase;
 
 class AggregateServiceProviderTest extends TestCase
 {
@@ -16,7 +16,7 @@ class AggregateServiceProviderTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            'Orchestra\Testbench\Tests\Stubs\Providers\ParentServiceProvider',
+            'Lumen\Testbench\Tests\Stubs\Providers\ParentServiceProvider',
         ];
     }
 

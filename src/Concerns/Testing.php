@@ -1,17 +1,19 @@
 <?php
 
-namespace Orchestra\Testbench\Concerns;
+namespace Lumen\Testbench\Concerns;
+
+use AlbertCht\Lumen\Testing\TestCase;
 
 use Carbon\Carbon;
 use Carbon\CarbonImmutable;
 use Illuminate\Console\Application as Artisan;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\WithoutEvents;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
+use AlbertCht\Lumen\Testing\DatabaseMigrations;
+use AlbertCht\Lumen\Testing\DatabaseTransactions;
+use AlbertCht\Lumen\Testing\RefreshDatabase;
+use AlbertCht\Lumen\Testing\WithFaker;
+use AlbertCht\Lumen\Testing\WithoutEvents;
+use AlbertCht\Lumen\Testing\WithoutMiddleware;
 use Mockery;
 use Throwable;
 
@@ -19,7 +21,7 @@ trait Testing
 {
     use CreatesApplication,
         WithFactories,
-        WithLaravelMigrations,
+        WithLumenMigrations,
         WithLoadMigrationsFrom;
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Http;
+namespace Lumen\Testbench\Http;
 
 class Kernel extends \Illuminate\Foundation\Http\Kernel
 {

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cp -rf vendor/laravel/laravel/config/*.php laravel/config/
-cp -rf vendor/laravel/laravel/database/migrations/*.php laravel/migrations/
-cp -rf vendor/laravel/laravel/resources/lang/en/*.php laravel/resources/lang/en/
+cp -rf vendor/laravel/lumen-framework/config/*.php lumen/config/
+cp -rf vendor/laravel/lumen/database/migrations/*.php lumen/migrations/
+cp -rf vendor/laravel/lumen/resources/lang/en/*.php lumen/resources/lang/en/

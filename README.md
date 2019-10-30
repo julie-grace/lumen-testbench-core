@@ -1,3 +1,7 @@
+# lumen-testbench-core
+
+Lumen compatible fork of orchestra/testbench-core
+
 Testing Helper for Laravel Development
 ==============
 

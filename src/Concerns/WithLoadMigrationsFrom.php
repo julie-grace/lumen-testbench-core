@@ -1,9 +1,9 @@
 <?php
 
-namespace Orchestra\Testbench\Concerns;
+namespace Lumen\Testbench\Concerns;
 
 use InvalidArgumentException;
-use Orchestra\Testbench\Database\MigrateProcessor;
+use Lumen\Testbench\Database\MigrateProcessor;
 
 trait WithLoadMigrationsFrom
 {
@@ -26,8 +26,6 @@ trait WithLoadMigrationsFrom
 
         $migrator = new MigrateProcessor($this, $options);
         $migrator->up();
-
-        $this->resetApplicationArtisanCommands($this->app);
 
         $this->beforeApplicationDestroyed(static function () use ($migrator) {
             $migrator->rollback();

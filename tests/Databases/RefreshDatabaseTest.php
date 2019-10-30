@@ -1,9 +1,10 @@
 <?php
 
-namespace Orchestra\Testbench\Tests\Databases;
+namespace Lumen\Testbench\Tests\Databases;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Orchestra\Testbench\TestCase;
+use AlbertCht\Lumen\Testing\Concerns\RefreshDatabase;
+use Illuminate\Support\Facades\Hash;
+use Lumen\Testbench\TestCase;
 
 class RefreshDatabaseTest extends TestCase
 {
@@ -12,7 +13,7 @@ class RefreshDatabaseTest extends TestCase
     /**
      * Setup the test environment.
      */
-    protected function setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -44,7 +45,7 @@ class RefreshDatabaseTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Orchestra\Testbench\Tests\Stubs\Providers\ServiceProvider::class,
+            \Lumen\Testbench\Tests\Stubs\Providers\ServiceProvider::class,
             //'Cartalyst\Sentry\SentryServiceProvider',
             //'YourProject\YourPackage\YourPackageServiceProvider',
         ];
@@ -74,7 +75,7 @@ class RefreshDatabaseTest extends TestCase
         $users = \DB::table('testbench_users')->where('id', '=', 1)->first();
 
         $this->assertEquals('hello@orchestraplatform.com', $users->email);
-        $this->assertTrue(\Hash::check('123', $users->password));
+        $this->assertTrue(Hash::check('123', $users->password));
 
         $this->assertEquals([
             'id',

@@ -1,20 +1,21 @@
 <?php
 
-namespace Orchestra\Testbench\Tests\Databases;
+namespace Lumen\Testbench\Tests\Databases;
 
 use Carbon\Carbon;
-use Orchestra\Testbench\TestCase;
+use Illuminate\Support\Facades\Hash;
+use Lumen\Testbench\TestCase;
 
 class MigrateWithLaravelTest extends TestCase
 {
     /**
      * Setup the test environment.
      */
-    protected function setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
 
-        $this->loadLaravelMigrations(['--database' => 'testing']);
+        $this->loadLumenMigrations(['--database' => 'testing']);
     }
 
     /**
@@ -71,9 +72,9 @@ class MigrateWithLaravelTest extends TestCase
         $now = Carbon::now();
 
         \DB::table('users')->insert([
-            'name' => 'Orchestra',
+            'name' => 'Lumen',
             'email' => 'hello@orchestraplatform.com',
-            'password' => \Hash::make('456'),
+            'password' => Hash::make('456'),
             'created_at' => $now,
             'updated_at' => $now,
         ]);
@@ -81,6 +82,6 @@ class MigrateWithLaravelTest extends TestCase
         $users = \DB::table('users')->where('id', '=', 1)->first();
 
         $this->assertEquals('hello@orchestraplatform.com', $users->email);
-        $this->assertTrue(\Hash::check('456', $users->password));
+        $this->assertTrue(Hash::check('456', $users->password));
     }
 }

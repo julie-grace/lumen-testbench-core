@@ -1,9 +1,9 @@
 <?php
 
-namespace Orchestra\Testbench\Tests;
+namespace Lumen\Testbench\Tests;
 
 use Carbon\Carbon;
-use Orchestra\Testbench\TestCase;
+use Lumen\Testbench\TestCase;
 
 class TimezoneTest extends TestCase
 {

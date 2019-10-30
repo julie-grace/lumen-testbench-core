@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Concerns\Database;
+namespace Lumen\Testbench\Concerns\Database;
 
 use Illuminate\Database\Connection;
 use Illuminate\Database\Schema\Blueprint;

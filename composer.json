@@ -1,6 +1,6 @@
 {
-    "name": "orchestra/testbench-core",
-    "description": "Testing Helper for Laravel Development",
+    "name": "unicorn/lumen-testbench-core",
+    "description": "Lumen fork of orchestra/testbench-core - Testing Helper for Lumen Development",
     "homepage": "http://orchestraplatform.com/docs/latest/components/testbench/",
     "keywords": ["laravel", "orchestral", "orchestra-platform", "testing", "tdd", "bdd"],
     "license": "MIT",
@@ -17,12 +17,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Orchestra\\Testbench\\" : "src/"
+            "Lumen\\Testbench\\" : "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Orchestra\\Testbench\\Tests\\": "tests/"
+            "Lumen\\Testbench\\Tests\\": "tests/"
         }
     },
     "require": {
@@ -30,13 +30,17 @@
         "fzaninotto/faker": "^1.4"
     },
     "require-dev": {
-        "laravel/framework": "^7.0",
-        "laravel/laravel": "dev-develop",
+        "illuminate/console": "*",
+        "illuminate/contracts": "*",
+        "illuminate/support": "*",
+        "laravel/lumen": "dev-master",
+        "laravel/lumen-framework": "^6.4",
         "mockery/mockery": "^1.2.3",
-        "phpunit/phpunit": "^8.3"
+        "phpunit/phpunit": "^8.5@dev",
+        "unicorn/lumen-testing": "dev-master"
     },
     "suggest": {
-        "laravel/framework": "Required for testing (^7.0).",
+        "laravel/lumen-framework": "Required for testing (^6.4).",
         "mockery/mockery": "Allow using Mockery for testing (^1.2.3).",
         "orchestra/testbench-browser-kit": "Allow using legacy Laravel BrowserKit for testing (^5.0).",
         "orchestra/testbench-dusk": "Allow using Laravel Dusk for testing (^5.0).",
