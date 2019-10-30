@@ -4,7 +4,7 @@ namespace Lumen\Testbench\Bootstrap;
 
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Config\Repository as RepositoryContract;
-use Illuminate\Contracts\Foundation\Application;
+use Laravel\Lumen\Application;
 use Symfony\Component\Finder\Finder;
 
 class LoadConfiguration
@@ -12,7 +12,7 @@ class LoadConfiguration
     /**
      * Bootstrap the given application.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param  \Laravel\Lumen\Application  $app
      *
      * @return void
      */
