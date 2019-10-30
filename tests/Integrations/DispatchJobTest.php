@@ -1,9 +1,9 @@
 <?php
 
-namespace Orchestra\Testbench\Tests;
+namespace Lumen\Testbench\Tests;
 
-use Orchestra\Testbench\TestCase;
-use Orchestra\Testbench\Tests\Stubs\Jobs\RegisterUser;
+use Lumen\Testbench\TestCase;
+use Lumen\Testbench\Tests\Stubs\Jobs\RegisterUser;
 
 class DispatchJobTest extends TestCase
 {

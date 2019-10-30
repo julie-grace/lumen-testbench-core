@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Tests\Stubs\Providers;
+namespace Lumen\Testbench\Tests\Stubs\Providers;
 
 class DeferredChildServiceProvider extends ServiceProvider
 {

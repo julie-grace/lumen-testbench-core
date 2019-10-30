@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchestra\Testbench\Tests\Stubs\Controllers;
+namespace Lumen\Testbench\Tests\Stubs\Controllers;
 
 use Closure;
 use PHPUnit\Framework\Assert;
