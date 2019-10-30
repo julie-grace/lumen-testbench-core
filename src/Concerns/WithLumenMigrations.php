@@ -4,7 +4,7 @@ namespace Lumen\Testbench\Concerns;
 
 use Lumen\Testbench\Database\MigrateProcessor;
 
-trait WithLaravelMigrations
+trait WithLumenMigrations
 {
     /**
      * Migrate Laravel's default migrations.
@@ -13,16 +13,16 @@ trait WithLaravelMigrations
      *
      * @return void
      */
-    protected function loadLaravelMigrations($database = []): void
+    protected function loadLumenMigrations($database = []): void
     {
         $options = \is_array($database) ? $database : ['--database' => $database];
 
-        $options['--path'] = 'migrations';
+        $options['--path'] = 'database/migrations';
 
         $migrator = new MigrateProcessor($this, $options);
         $migrator->up();
 
-        $this->resetApplicationArtisanCommands($this->app);
+        // $this->resetApplicationArtisanCommands($this->app);
 
         $this->beforeApplicationDestroyed(static function () use ($migrator) {
             $migrator->rollback();
