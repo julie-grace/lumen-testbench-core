@@ -30,14 +30,14 @@
         "fzaninotto/faker": "^1.4"
     },
     "require-dev": {
-        "albertcht/lumen-testing": "dev-master",
         "illuminate/console": "*",
         "illuminate/contracts": "*",
         "illuminate/support": "*",
         "laravel/lumen": "dev-master",
         "laravel/lumen-framework": "^6.4",
         "mockery/mockery": "^1.2.3",
-        "phpunit/phpunit": "^8.5@dev"
+        "phpunit/phpunit": "^8.5@dev",
+        "unicorn/lumen-testing": "dev-master"
     },
     "suggest": {
         "laravel/lumen-framework": "Required for testing (^6.4).",

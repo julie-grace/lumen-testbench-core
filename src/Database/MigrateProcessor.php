@@ -3,7 +3,7 @@
 namespace Lumen\Testbench\Database;
 
 use Illuminate\Database\Migrations\Migrator;
-use Illuminate\Foundation\Testing\PendingCommand;
+use AlbertCht\Lumen\Testing\PendingCommand;
 use Lumen\Testbench\Contracts\TestCase;
 
 class MigrateProcessor
