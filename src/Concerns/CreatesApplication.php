@@ -300,6 +300,11 @@ trait CreatesApplication
      */
     protected function resolveApplicationBootstrappers($app)
     {
+        $app->make('Lumen\Testbench\Bootstrap\HandleExceptions')->bootstrap($app);
+        // $app->make('Illuminate\Foundation\Bootstrap\RegisterFacades')->bootstrap($app);
+        $app->make('Lumen\Testbench\Bootstrap\SetRequestForConsole')->bootstrap($app);
+        // $app->make('Lumen\Testbench\Bootstrap\RegisterProviders')->bootstrap($app);
+
         $this->getEnvironmentSetUp($app);
 
         foreach ($this->resolveApplicationProviders($app) as $provider) {
