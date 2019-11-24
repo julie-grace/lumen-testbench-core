@@ -5,7 +5,6 @@ namespace Lumen\Testbench\Concerns;
 use Laravel\Lumen\Application;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Facade;
-use PHPUnit\Framework\TestCase;
 
 trait CreatesApplication
 {
@@ -302,17 +301,6 @@ trait CreatesApplication
     protected function resolveApplicationBootstrappers($app)
     {
         $app->make('Lumen\Testbench\Bootstrap\HandleExceptions')->bootstrap($app);
-
-        if ($this instanceof TestCase) {
-            Collection::make($this->getAnnotations())->each(function ($location) use ($app) {
-                Collection::make($location['environment-setup'] ?? [])
-                    ->filter(function ($method) {
-                        return ! \is_null($method) && \method_exists($this, $method);
-                    })->each(function ($method) use ($app) {
-                        $this->{$method}($app);
-                    });
-            });
-        }
 
         $this->getEnvironmentSetUp($app);
 
