@@ -1,6 +1,6 @@
 <?php
 
-namespace Lumen\Testbench\TestCase;
+namespace Lumen\Testbench\Tests;
 
 use Illuminate\Support\Facades\Config;
 use Lumen\Testbench\TestCase;
