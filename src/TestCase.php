@@ -7,6 +7,7 @@ use AlbertCht\Lumen\Testing\Concerns\InteractsWithConsole;
 use AlbertCht\Lumen\Testing\Concerns\InteractsWithContainer;
 use AlbertCht\Lumen\Testing\Concerns\InteractsWithDatabase;
 use AlbertCht\Lumen\Testing\Concerns\InteractsWithExceptionHandling;
+use AlbertCht\Lumen\Testing\Concerns\InteractsWithRedis;
 use AlbertCht\Lumen\Testing\Concerns\MakesHttpRequests;
 use AlbertCht\Lumen\Testing\Concerns\MocksApplicationServices;
 use PHPUnit\Framework\TestCase as PHPUnit;
@@ -18,6 +19,7 @@ abstract class TestCase extends PHPUnit implements Contracts\TestCase
         InteractsWithContainer,
         InteractsWithAuthentication,
         InteractsWithDatabase,
+        InteractsWithRedis,
         InteractsWithExceptionHandling,
         MakesHttpRequests,
         MocksApplicationServices;

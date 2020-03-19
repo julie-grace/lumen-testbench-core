@@ -301,6 +301,8 @@ trait CreatesApplication
      */
     protected function resolveApplicationBootstrappers($app)
     {
+        $app->make('Lumen\Testbench\Bootstrap\HandleExceptions')->bootstrap($app);
+
         if ($this instanceof TestCase) {
             Collection::make($this->getAnnotations())->each(function ($location) use ($app) {
                 Collection::make($location['environment-setup'] ?? [])
