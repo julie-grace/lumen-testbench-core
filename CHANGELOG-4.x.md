@@ -2,6 +2,69 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `orchestra/testbench-core`.
 
+## 4.7.0
+
+Released: 2020-03-07
+
+### Changes
+
+* Update Laravel 6.x skeleton.
+* Recommend to be used with Laravel Framework v6.18.0+.
+
+## 4.6.0
+
+Released: 2020-01-30
+
+### Changes
+
+* Bump minimum `fzaninotto/faker` version to `1.9.1`+ to properly support PHP 7.4.
+
+## 4.5.1
+
+Released: 2020-01-21
+
+### Changes
+
+* Update Laravel 6 skeleton:
+    - Ensure validation text ends with `.`.
+
+## 4.5.0
+
+Released: 2019-12-31
+
+### Added
+
+* Added support for PHPUnit v9.
+
+### Changes
+
+* Update support for Laravel Framework v6.9.
+
+## 4.4.2
+
+Released: 2019-12-10
+
+### Added
+
+* Add `storage/app/public` folder on skeleton directory.
+
+## 4.4.1
+
+Released: 2019-11-23
+
+### Fixes
+
+* Check if `Orchestra\Testbench\Concerns\CreatesApplication` is being used by `PHPUnit\Framework\TestCase` before trying to uses `@environment-setup`
+annotation support.
+
+## 4.4.0
+
+Released: 2019-11-22
+
+### Added
+
+* Added annotation based environment setup using `@environment-setup`, the annotation accept the method name string to be used for environment setup, you can call `@environment-setup` multiple times to load multiple setup per test.
+
 ## 4.3.0
 
 Released: 2019-10-24

@@ -1,0 +1,13 @@
+preset: package
+
+namespace: Lumen\Testbench
+
+paths:
+  src: src
+
+migration:
+  path: tests/migrations
+  prefix: ''
+
+console:
+  namespace: Lumen\Testbench\Console\Commands

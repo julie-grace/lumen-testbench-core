@@ -1,6 +1,6 @@
 <?php
 
-namespace Lumen\Testbench\TestCase;
+namespace Lumen\Testbench\Tests;
 
 use Lumen\Testbench\TestCase;
 

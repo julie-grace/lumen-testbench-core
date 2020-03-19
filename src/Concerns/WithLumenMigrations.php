@@ -7,7 +7,7 @@ use Lumen\Testbench\Database\MigrateProcessor;
 trait WithLumenMigrations
 {
     /**
-     * Migrate Laravel's default migrations.
+     * Migrate Lumen's default migrations.
      *
      * @param  array|string  $database
      *

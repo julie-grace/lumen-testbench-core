@@ -16,7 +16,7 @@ class ConfigTest extends TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app->config['database.default'] = 'testing';
+        $app->config['database.default'] = 'testbench';
     }
 
     /** @test */

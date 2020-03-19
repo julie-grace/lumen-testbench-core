@@ -1,5 +1,7 @@
 <?php
+
 namespace Lumen\Testbench\Tests;
+
 use Lumen\Testbench\TestCase;
 
 class AnnotationEnvironmentSetupTest extends TestCase
@@ -14,6 +16,7 @@ class AnnotationEnvironmentSetupTest extends TestCase
         $this->assertSame('testbench', config('testbench.one'));
         $this->assertNull(config('testbench.two'));
     }
+
     /**
      * @test
      * @environment-setup secondConfig
@@ -24,6 +27,7 @@ class AnnotationEnvironmentSetupTest extends TestCase
         $this->assertNull(config('testbench.one'));
         $this->assertSame('testbench', config('testbench.two'));
     }
+
     /**
      * @test
      * @environment-setup firstConfig
@@ -35,6 +39,7 @@ class AnnotationEnvironmentSetupTest extends TestCase
         $this->assertSame('testbench', config('testbench.one'));
         $this->assertSame('testbench', config('testbench.two'));
     }
+
     /**
      * Define environment setup.
      *
@@ -42,8 +47,10 @@ class AnnotationEnvironmentSetupTest extends TestCase
      */
     protected function firstConfig($app)
     {
-        $app['config']->set('testbench.one', 'testbench');
+        $app->config['testbench.one'] = 'testbench';
+        // $app['config']->set('testbench.one', 'testbench');
     }
+
     /**
      * Define environment setup.
      *
@@ -51,8 +58,10 @@ class AnnotationEnvironmentSetupTest extends TestCase
      */
     protected function secondConfig($app)
     {
-        $app['config']->set('testbench.two', 'testbench');
+        $app->config['testbench.two'] = 'testbench';
+        // $app['config']->set('testbench.two', 'testbench');
     }
+
     /**
      * Define environment setup.
      *
@@ -60,6 +69,7 @@ class AnnotationEnvironmentSetupTest extends TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        $app['config']->set('database.default', 'testbench');
+        $app->config['database.default'] = 'testbench';
+        // $app['config']->set('database.default', 'testbench');
     }
 }

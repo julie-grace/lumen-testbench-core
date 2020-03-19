@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Lumen\Testbench\TestCase;
 
-class MigrateWithLaravelTest extends TestCase
+class MigrateWithLumenTest extends TestCase
 {
     /**
      * Setup the test environment.
