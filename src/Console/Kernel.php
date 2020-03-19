@@ -2,7 +2,7 @@
 
 namespace Lumen\Testbench\Console;
 
-use Exception;
+use Throwable;
 
 class Kernel extends \Laravel\Lumen\Console\Kernel
 {
@@ -23,13 +23,13 @@ class Kernel extends \Laravel\Lumen\Console\Kernel
     /**
      * Report the exception to the exception handler.
      *
-     * @param  \Exception  $e
+     * @param  \Throwable  $e
      *
-     * @throws \Exception
+     * @throws \Throwable
      *
      * @return void
      */
-    protected function reportException(Exception $e)
+    protected function reportException(Throwable $e)
     {
         throw $e;
     }

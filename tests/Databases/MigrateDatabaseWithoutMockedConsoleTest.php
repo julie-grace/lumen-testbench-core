@@ -44,7 +44,7 @@ class MigrateDatabaseWithoutMockedConsoleTest extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Lumen\Testbench\Tests\Stubs\Providers\ServiceProvider::class,
+            'Lumen\Testbench\Tests\Stubs\Providers\ServiceProvider',
             //'Cartalyst\Sentry\SentryServiceProvider',
             //'YourProject\YourPackage\YourPackageServiceProvider',
         ];
